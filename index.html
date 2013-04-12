@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+		<!--<script src="js/vendor/modernizr-2.6.2.min.js"></script>-->
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+
+		<!-- Add your site or application content here -->
+		<div id="header">
+			<div id="pages">
+				<a href="#">热度</a>
+				<a href="#">月份</a>
+				<a href="#">关于</a>
+				<a href="#">联系</a>
+				<span class="rightside">
+				<a href="#" id="login">登录</a>
+				<a href="#" id="register">注册</a>
+				</span>
+			</div>
+		</div>
+		<div id="container">
+			<div id="btitle">
+				<h3>Take Me Back To Yesterday</h3>
+			</div>
+			<div class="post clearfix">
+				<div class="left-wrapper">
+				<a href="#" class="type-wrapper"><span class="post-icon"></span><span class="type quote"></span></a>
+				</div>
+				<div class="content-wrapper">
+					<blockquote class="quote-text">
+					Mathilda： Is life always this hard, or is it just when you're a kid? <br/>
+					Léon： Always like this. 
+					</blockquote>
+
+					<div class="quote-note clearfix"><span>Léon(1994)</span></div>
+					
+					<p>1945年5月21日，位于印度阿萨姆邦的中国军队阵亡烈士墓。每一个小小的墓碑下面都有一个让家人魂牵梦绕的年轻人的亡魂。正如参加过远征军的诗人穆旦所说的，虽然他们的身体还挣扎着想要回家，而无名的野花已在头上开满。</p>
+				</div>
+				<div class="right_wrapper">
+					2013-03-01
+				</div>
+				<p style="clear:both"></p>
+				<div class="content-list">
+					<ul class="item-list clearfix">
+						<li><a href="#"  class="alpha">2013-03-25<span class="type">图+文</span></a></li>
+						<li><a href="#">2013-03-24 <span class="type">一句</span></a></li>
+						<li><a href="#">2013-03-23 <span class="type">一张</span></a></li>
+						<li><a href="#"  class="beta">2013-03-22 <span class="type">一首</span></a></li>
+						<li><a href="#"  class="alpha">2013-03-25</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+		<!--modals below-->
+		<div class="modal hide fade" id="loginModal">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4>Login to Yiju.us</h4>
+		  </div>
+		  <div class="modal-body">
+			<form class="dform loginform">
+				<p class="clearfix" id="didp"><label for="regularInput">邮箱</label>
+				<input type="text" name="email" id="uemail" /></p>
+
+				<p class="clearfix" ><label for="regularInput">密码</label>
+				<input type="password" name="password" id="upwd" />
+				</p>
+
+				<p class="clearfix" ><label for="regularInput">自动登录</label>
+				<input type="checkbox" id="remPwd" class="regular-checkbox"/>
+				</p>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<button class="btn btn-primary login-yiju" style="margin-bottom:10px;">登录</button>
+			<button class="btn btn-primary douban-login-yiju" style="margin-bottom:10px;">豆瓣登录</button>
+		  </div>
+		</div>
+		<div class="modal hide fade" id="regModal">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4>Register to Yiju.us</h4>
+		  </div>
+		  <div class="modal-body">
+			<form class="dform regform">
+				<p class="clearfix" ><label for="regularInput">邮箱</label>
+				<input type="text" name="email" id="remail" /></p>
+
+				<p class="clearfix" ><label for="regularInput">昵称</label>
+				<input type="text" name="uname" id="rusername" />
+				</p>
+				<p class="clearfix" ><label for="regularInput">密码</label>
+				<input type="password" name="password" id="rpwd" />
+				</p>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<span class="vhint"></span>
+			<button class="btn btn-primary reg-vbook" style="margin-bottom:10px;">创建新用户</button>
+		  </div>
+		</div>
+		<div class="modal hide fade" id="myModal">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4>发表新的一句</h4>
+		  </div>
+		  <div class="modal-body">
+			<form class="dform regform">
+				<p class="clearfix" style="margin-top:0px;">
+					<textarea name="rmain" cols="30" rows="3" id="rmain" placeholder="写下这句话"/></textarea>
+				</p>
+				<p class="clearfix" >
+					<input type="text" name="rauthor" id="rauthor" placeholder="作者-时间-(作品)"/>
+				</p>
+				<p class="clearfix" >
+					<textarea name="rdesc" id="rdesc" cols="30" rows="6" placeholder="补充说明(选填) 关于这句话的背景 故事 逸闻"></textarea>
+				</p>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<span class="vhint"></span>
+			<button class="btn btn-primary post-entry" id="newPost" style="margin-bottom:10px;">发表</button>
+		  </div>
+		</div>
+		<!--templates below-->
+		<script type="text/template" id="user-template">
+			<a href="###"><img src="<%= avatar %>" alt="<%= uname %>" class="useravatar"/></a>
+			<a href="#"><%= uname %></a>
+			<a href="#" id="upload">发表</a>
+			<a href="#" id="settings">设置</a>
+			<a href="#" id="logout">退出</a>
+		</script>
+		<script type="text/template" id="post-detail-template">
+			<div class="left-wrapper">
+				<a href="#" class="type-wrapper"><span class="post-icon"></span><span class="type quote"></span></a>
+				</div>
+				<div class="content-wrapper">
+					<blockquote class="quote-text">
+					<%= title %>
+					</blockquote>
+
+					<div class="quote-note clearfix"><span><%= author %>(<%= publish %>)</span></div>
+					
+					<p><%= summary %></p>
+				</div>
+				<div class="right_wrapper">
+					2013-03-01
+			</div>
+		</script>
+		<script type="text/template" id="post-list-template">
+			<a href="#"><%= uname %></a>
+		</script>
+		<script
+			src="static/seajs/sea.js" 
+			data-config="app/config"  
+			data-main="app/index">     
+		</script>
+	</body>
+</html>
