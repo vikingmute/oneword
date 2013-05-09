@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 04 月 19 日 10:24
+-- 生成日期: 2013 年 05 月 09 日 10:19
 -- 服务器版本: 5.1.36-community-log
 -- PHP 版本: 5.3.0
 
@@ -56,6 +56,31 @@ INSERT INTO `book` (`id`, `title`, `author`, `publish`, `image`, `pages`, `isbn`
 (6, 'PHP and MySQL Web Development', 'Luke Welling', 'Sams', 'http://img3.douban.com/lpic/s4084950.jpg', 1008, 2147483647, 'Book Description\nPHP and MySQL Web Development teaches you to develop dynamic, secure, commerical Web sites. Using the same accessible, popular teaching style of the three previous editions, this book has been thoroughly updated to reflect the rapidly changing landscape of MySQL and PHP. This fourth edition incorporates changes in the 5.1 specs of PHP and MySQL, as well as reflecting new trends in Web development in general. Some new highlights include coverage of Ajax, social networking sites, security concerns, and the PEAR repository of PHP extensions and applications.', '', '', 'Mysql/9#PHP/5', 1, 0),
 (7, 'Learning Python', 'Mark Lutz', 'O''Reilly Media', 'http://img5.douban.com/lpic/s10347319.jpg', 1216, 2147483647, 'Amazon.com Review\nThe authors of Learning Python show you enough essentials of the Python scripting language to enable you to begin solving problems right away, then reveal more powerful aspects of the language one at a time. This approach is sure to appeal to programmers and system administrators who have urgent problems and a preference for learning by semi-guided experimentation.\nFirst off, Learning Python shows the relationships among Python scripts and their interpreter (in a mostly platform-neutral way). Then, the authors address the mechanics of the language itself, providing illustrations of how Python conceives of numbers, strings, and other objects as well as the operators you use to work with them. Dictionaries, lists, tuples, and other data structures specific to Python receive plenty of attention including complete examples.\nAuthors Mark Lutz and David Ascher build on that fundamental information in their discussions of functions and modules, which evolve into coverage of ', '', '', 'Python/8', 0, 0),
 (8, 'The Ruby Programming Language', 'David Flanagan', 'O''Reilly Media, Inc.', 'http://img3.douban.com/lpic/s3593250.jpg', 448, 2147483647, 'Ruby has gained some attention through the popular Ruby on Rails web development framework, but the language alone is worthy of more consideration -- a lot more. This book offers a definition explanation of this powerful and extremely flexible language, which draws inspiration from Lisp, Smalltalk and Perl, but uses a grammar that''s easy for C and Java programmers to learn.\nWith The Ruby Programming Language, you will quickly learn your way around versions 1.8 and 1.9, and discover why this pure object-oriented language is also suitable for procedural and functional programming styles. You''ll learn Ruby''s lexical structure, primary expressions, conditionals, syntax, classes, the data it manipulates, and more. Ruby blurs the distinction between language and platform, so this book includes a tour of the core Ruby API. But the primary subject is the language itself, including:\n* Ruby''s lexical structure including basic issues like character set, case sensitivity and reserved words\n* Numbe', 'abcdefghigk', '/uploads/92608.jpg', 'Ruby/10', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `entry`
+--
+
+CREATE TABLE IF NOT EXISTS `entry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `publish_time` varchar(20) NOT NULL,
+  `fav` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `entry`
+--
+
+INSERT INTO `entry` (`id`, `title`, `author`, `description`, `uid`, `type`, `publish_time`, `fav`) VALUES
+(1, 'The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.', 'Martin Luther King Jr. (Strength to Love) 1963', 'æœ€ç»ˆè¯„ä»·ä¸€ä¸ªäººçš„å°ºåº¦ä¸æ˜¯ä»–åœ¨é¡ºå¢ƒä¸­çš„è¡¨çŽ°ï¼Œè€Œæ˜¯ä»–åœ¨é€†å¢ƒä¸­çš„ä½œä¸ºã€‚ é€ç»™å„ä½å…±å‹‰', 1, 'text', '2013-05-09 07:59:04', 0);
 
 -- --------------------------------------------------------
 
