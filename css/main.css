@@ -320,8 +320,16 @@ textarea {
     width:880px;
     margin:0 auto;
 }
-#header a{
-    display:inline-block;
+#header .navigate{
+    padding:0px;
+    margin:0px;
+}
+#header .navigate>li{
+    float:left;
+    list-style-type: none;
+}
+#header .navigate >li>a{
+    display:block;
     color:#fff;
     letter-spacing: 2px;
     opacity: .7;
@@ -331,6 +339,9 @@ textarea {
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     transition: all .5s;
+}
+#header .leftside{
+    float: left;
 }
 #header .rightside{
     float: right;
@@ -411,7 +422,16 @@ a.type-wrapper {
 a.type-wrapper:hover{
     opacity: 1;
 }
-
+a.type-wrapper span.type {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(http://static.tumblr.com/2krww0e/McLm06ati/lino-icons-2.png);
+    background-position-y: 0px;
+}
+span.quote {
+    background-position-x: -32px;
+}
 blockquote:not(.answer-question-text) {
     font-style: italic;
     font-size: 20px;
@@ -425,39 +445,39 @@ blockquote:not(.answer-question-text) {
     display: block;
     word-wrap: break-word;
     -webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-	-webkit-margin-start: 0;
-	-webkit-margin-end: 0;
+-webkit-margin-after: 0;
+-webkit-margin-start: 0;
+-webkit-margin-end: 0;
 }
 .content-wrapper p {
     line-height: 20px;
 }
 blockquote:not(.answer-question-text)::before {
-	color: #333;
+color: #333;
 }
 
 blockquote:not(.answer-question-text)::before {
-	content: "“";
-	font-style: normal;
-	font-family: times,'times new roman',serif;
-	font-size: 30px;
-	position: absolute;
-	left: 0px;
-	padding-top: 4px;
+content: "“";
+font-style: normal;
+font-family: times,'times new roman',serif;
+font-size: 30px;
+position: absolute;
+left: 0px;
+padding-top: 4px;
 }
 div.quote-note {
-	color: #444;
-	margin-top: 20px;
-	font-weight: bold;
+color: #444;
+margin-top: 20px;
+font-weight: bold;
 }
 div.quote-note::before {
-	content: "";
-	background: #e95700;
-	display: block;
-	height: 2px;
-	opacity: .7;
-	width: 40px;
-	margin-bottom: 25px;
+content: "";
+background: #e95700;
+display: block;
+height: 2px;
+opacity: .7;
+width: 40px;
+margin-bottom: 25px;
 }
 .content-list{
     padding:0px 40px;
@@ -506,11 +526,11 @@ div.quote-note::before {
     display:none;
 }
 button.close {
-	padding: 0;
-	cursor: pointer;
-	background: transparent;
-	border: 0;
-	-webkit-appearance: none;
+padding: 0;
+cursor: pointer;
+background: transparent;
+border: 0;
+-webkit-appearance: none;
 }
 
 .close {
@@ -581,79 +601,161 @@ button.close {
     margin-top: 2px;
 }
 .modal-header {
-	padding: 9px 15px;
-	border-bottom: 1px solid #eee;
+  padding: 9px 15px;
+  border-bottom: 1px solid #eee;
 }
 
 .modal-header .close {
-	margin-top: 2px;
+  margin-top: 2px;
 }
 
 .modal-header h3 {
-	margin: 0;
-	line-height: 30px;
+  margin: 0;
+  line-height: 30px;
 }
 
 .modal-body {
-	position: relative;
-	max-height: 400px;
-	padding: 15px;
-	overflow-y: auto;
+  position: relative;
+  max-height: 400px;
+  padding: 15px;
+  overflow-y: auto;
 }
 
 .modal-form {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .modal-footer {
-	padding: 14px 15px 15px;
-	margin-bottom: 0;
-	text-align: right;
-	background-color: #f5f5f5;
-	border-top: 1px solid #ddd;
-	-webkit-border-radius: 0 0 6px 6px;
-	 -moz-border-radius: 0 0 6px 6px;
-		  border-radius: 0 0 6px 6px;
-	*zoom: 1;
-	-webkit-box-shadow: inset 0 1px 0 #ffffff;
-	 -moz-box-shadow: inset 0 1px 0 #ffffff;
-		  box-shadow: inset 0 1px 0 #ffffff;
+  padding: 14px 15px 15px;
+  margin-bottom: 0;
+  text-align: right;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+  *zoom: 1;
+  -webkit-box-shadow: inset 0 1px 0 #ffffff;
+     -moz-box-shadow: inset 0 1px 0 #ffffff;
+          box-shadow: inset 0 1px 0 #ffffff;
 }
 
 .modal-footer:before,
 .modal-footer:after {
-	display: table;
-	line-height: 0;
-	content: "";
+  display: table;
+  line-height: 0;
+  content: "";
 }
 
 .modal-footer:after {
-	clear: both;
+  clear: both;
 }
 
 .modal-footer .btn + .btn {
-	margin-bottom: 0;
-	margin-left: 5px;
+  margin-bottom: 0;
+  margin-left: 5px;
 }
 
 .modal-footer .btn-group .btn + .btn {
-	margin-left: -1px;
+  margin-left: -1px;
 }
 
 .modal-footer .btn-block + .btn-block {
-	margin-left: 0;
+  margin-left: 0;
 }
 .modal-body p label{
-	height:25px;
-	line-height: 25px;
-	display:block;
-	margin-right: 20px;
-	float:left;
+   height:25px;
+  line-height: 25px;
+  display:block;
+  margin-right: 20px;
+  float:left;
 }
 #remPwd{
-	margin-top:5px;
+  margin-top:5px;
 }
 
 .rightside img{
-	border-radius: 50%;
+  border-radius: 50%;
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 140px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+
+.dropdown-menu .divider {
+  *width: 100%;
+  height: 1px;
+  margin: 9px 1px;
+  *margin: -5px 0 5px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  color: #333333;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  text-decoration: none;
+  background-color: #efefef;
+  color: #333333 !important;
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  text-decoration: none;
+  background-color:  #efefef;
+  color: #333333;
+}
+
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  color: #999999;
+}
+
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  cursor: default;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }

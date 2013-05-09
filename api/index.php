@@ -55,6 +55,15 @@ $app->get('/book/:id', function ($id) use ($mysqli){
 	echo json_encode($row);
 });
 
+$app->get('/post/:id', function ($id) use ($mysqli){
+	$stmt = $mysqli->prepare("SELECT title,author,description,publish_time,fav,uname,email FROM entry INNER JOIN user WHERE entry.uid = user.id AND user.id = ?;");
+	$id = intval($id) ;
+	$stmt->bind_param('i',$id);
+	$stmt->execute();
+	$row = $stmt->get_result()->fetch_assoc();
+	echo json_encode($row);
+});
+
 $app->get('/tag/:id', function ($id) use ($mysqli){
 	$stmt = $mysqli->prepare("SELECT * FROM tbrela INNER JOIN book ON tbrela.bid = book.id WHERE tbrela.tid =? LIMIT 0 , 30;");
 	$id = intval($id) ;
@@ -130,6 +139,7 @@ $app->post('/login',function () use ($app,$mysqli){
 			if($remPwd == '1'){
 				setcookie("username",$row['uname'],time()+3600*24*7,"/");
 				setcookie("flag",$row['flag'],time()+3600*24*7,"/");
+				setcookie("uid",$row['id'],time()+3600*24*7,"/");
 			}
 			echo json_encode($row);
 		} else {
@@ -172,6 +182,22 @@ $app->post('/post', function () use ($app,$mysqli) {
 		echo '{"status":"fail"}';
 	}
 });
+
+$app->post('/postentry', function () use ($app,$mysqli) {
+	$req = $app->request()->getBody();
+	$json_1 = json_decode($req,true);
+	$date = date('Y-m-d H:i:s');
+	$stmt = $mysqli->prepare("INSERT INTO entry(title,author,description,uid,type,publish_time,fav) VALUES(?,?,?,?,?,?,?)");
+	$stmt->bind_param('sssissi',$json_1['title'],$json_1['author'],$json_1['description'],$json_1['uid'],$json_1['type'],$date,$json_1['fav']);
+	$stmt->execute();
+	if($stmt->affected_rows == 1){
+		echo '{"status":"success"}';
+	}else {
+		echo '{"status":"fail"}';
+	}
+});
+
+
 
 // PUT route
 $app->put('/put', function () {

@@ -9,10 +9,28 @@ define(function(require, exports, module){
 		defaults: {
 			title:'a test quote',
 			author:'a normal guy',
-			desc:'a very long stuff and keep going',
+			description:'a very long stuff and keep going',
 			type:'text',
-			upvote:'0',
-			collected:'0'
+			fav: 0,
+			uid: 0,
+			publish_time:0
+		},
+		publish:function(){
+			this.url = "/api/postentry";
+			this.save({},{
+				success: function (model, response) {
+					if(model.get('status') == 'fail'){
+						alert('登录失败 请重新输入');
+						//$('.loginform')[0].reset();
+					}else{
+						//$('#loginModal').modal('hide');
+						alert('发表成功');
+					}
+				},error: function (model, response) {
+						console.log(model);
+				}
+			})
+
 		}
 	})
 

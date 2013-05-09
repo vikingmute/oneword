@@ -11,6 +11,13 @@ Frameworks used in this project
 
 to be continued...really wanna make it big
 
+develop plans:
+
+* 现在已经完成的功能 用户注册 登录 基本数据表 发表文章
+* 5月份 完善文章发表编辑 用户一些信息管理 发表图片
+* 6月份 完成整体功能 发表音乐 等一些周边功能 放到sae测试服务器上测试功能
+* 7月份 切换backend到node.js 和 express 和 mongodb（大体构思）  
+
 [1]: http://vikingmute.com/        "Vikingmute"
 [2]: http://seajs.org/docs/        "A Module Loader for the Web"
 [3]: http://backbonejs.org/        "MVC framework for javascript"

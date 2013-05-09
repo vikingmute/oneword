@@ -13,7 +13,7 @@ define(function(require, exports, module){
 		},
 		getPost:function(id){
 			var detail= new Post.Model();
-			detail.url = "/api/book/"+id;
+			detail.url = "/api/post/"+id;
 			detail.bind('change',function(){
 				var view = new Post.ViewDetail({model: detail});
 				$('.post').html(view.render().el);

@@ -23,6 +23,10 @@ seajs.config({
 		'cookie':{
 			src:'lib/cookie.js',
 			deps:['jquery']
+		},
+		'dropdown':{
+			src:'lib/dropdown.js',
+			deps:['jquery']
 		}
 	}
 })

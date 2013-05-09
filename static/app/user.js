@@ -4,6 +4,7 @@ define(function(require, exports, module){
 	//console.log(AllViews);
 	require('cookie');
 	require('modal');
+	var Post = require('./post');
 	var User = {};
 	User.Model = Backbone.Model.extend({
 		initialize: function(){
@@ -57,13 +58,14 @@ define(function(require, exports, module){
 	});
 
 	User.View = Backbone.View.extend({
-		tagName:"span",
+		tagName:"div",
 		className:"userInfo rightside",
 		template: _.template($('#user-template').html()),
 		events:{
-			"click #upload" : "openModal",
+			"click #upload" : "openDropDown",
 			"click #settings" : "configSettings",
-			"click #logout" : "doLogout"
+			"click #logout" : "doLogout",
+			"click #upload-word" : "openModal"
 		},
 		render:function(){
 			this.$el.html(this.template(this.model.toJSON()));
@@ -73,8 +75,33 @@ define(function(require, exports, module){
 			$('#myModal').modal({'backdrop':'static','show':true});
 			//post a new entry
 			$('#newPost').on('click',function(e){
-				alert(1234);
-				console.log($('#rmain').val());
+				//just skip the validate here
+				var newpost = {
+					title:$('#rmain').val(),
+					author:$('#rauthor').val(),
+					description:$('#rdesc').val(),
+					uid:$.cookie('uid')
+				}
+				var entry = new Post.Model(newpost);
+				entry.publish();
+				e.preventDefault();
+			})
+		},
+		openDropDown:function(e){
+			var submenu = $('#post-menu');
+			if(submenu.css('display') == 'block'){
+				submenu.hide();
+			} else {
+				submenu.show();
+			}
+			$(document).unbind('click');
+			$(document).bind('click',function(e){
+				var tar = e.target;
+				if($(tar).attr('id') != 'upload'){
+					if($(tar).parents('#post-menu').length != 1){
+						submenu.hide();
+					}
+				}
 				e.preventDefault();
 			})
 			e.preventDefault();
